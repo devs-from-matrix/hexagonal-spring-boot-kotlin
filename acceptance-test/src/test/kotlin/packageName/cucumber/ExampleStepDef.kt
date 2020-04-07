@@ -58,7 +58,7 @@ class ExampleStepDef(restTemplate: TestRestTemplate, exampleDao: ExampleDao) : E
             assertThat(responseEntity.statusCode).isEqualTo(HttpStatus.OK)
             assertThat(responseEntity.body).isNotNull
             assertThat(responseEntity.body.examples).isNotEmpty.extracting("description")
-                    .contains(*expectedExamples.map { it.description }.toTypedArray())
+                    .contains(expectedExamples.map { it.description }[0])
         }
     }
 }
