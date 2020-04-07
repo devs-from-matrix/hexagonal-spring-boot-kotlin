@@ -1,4 +1,4 @@
-# hexagonal-spring-boot-kotlin 
+# hexagonal-spring-boot-kotlin [![Build Status](https://travis-ci.com/devs-from-matrix/hexagonal-spring-boot-kotlin.svg?branch=master)](https://travis-ci.com/devs-from-matrix/hexagonal-spring-boot-kotlin) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5727f2a507544225bbfa751f8b7d27fd)](https://www.codacy.com/gh/devs-from-matrix/hexagonal-spring-boot-kotlin?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=devs-from-matrix/hexagonal-spring-boot-kotlin&amp;utm_campaign=Badge_Grade)
 
 This project is a template reference for hexagonal spring boot. This repository is to be used by [app-generator](https://github.com/devs-from-matrix/app-generator) for scaffolding.
 
