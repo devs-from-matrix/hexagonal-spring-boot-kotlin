@@ -21,41 +21,41 @@ import packageName.domain.port.RequestExample
 @SpringBootTest(classes = [ExamplePoetryRestAdapterApplication::class], webEnvironment = RANDOM_PORT)
 @EnableAutoConfiguration(exclude = [DataSourceAutoConfiguration::class])
 class ExampleResourceTest {
-    companion object {
-        private const val LOCALHOST = "http://localhost:"
-        private const val API_URI = "/api/v1/examples"
-    }
+  companion object {
+    private const val LOCALHOST = "http://localhost:"
+    private const val API_URI = "/api/v1/examples"
+  }
 
-    @LocalServerPort
-    private val port: Int = 0
-    @Autowired
-    private lateinit var restTemplate: TestRestTemplate
-    @Autowired
-    private lateinit var requestExample: RequestExample
+  @LocalServerPort
+  private val port: Int = 0
+  @Autowired
+  private lateinit var restTemplate: TestRestTemplate
+  @Autowired
+  private lateinit var requestExample: RequestExample
 
-    @Test
-    fun `should start the rest adapter application`() {
-        assertThat(java.lang.Boolean.TRUE).isTrue()
-    }
+  @Test
+  fun `should start the rest adapter application`() {
+    assertThat(java.lang.Boolean.TRUE).isTrue()
+  }
 
-    @Test
-    fun `should give examples when asked for examples with the support of domain stub`() {
-        // Given
-        Mockito.lenient().`when`(requestExample.getExamples()).thenReturn(mockExampleInfo())
-        // When
-        val url = "$LOCALHOST$port$API_URI"
-        val responseEntity = restTemplate.getForEntity(url, ExampleInfo::class.java)
-        // Then
-        assertThat(responseEntity.statusCode).isEqualTo(HttpStatus.OK)
-        assertThat(responseEntity.body).isNotNull
-        assertThat(responseEntity.body.examples).isNotEmpty.extracting("description").contains("Johnny Johnny Yes Papa !!")
-    }
+  @Test
+  fun `should give examples when asked for examples with the support of domain stub`() {
+    // Given
+    Mockito.lenient().`when`(requestExample.getExamples()).thenReturn(mockExampleInfo())
+    // When
+    val url = "$LOCALHOST$port$API_URI"
+    val responseEntity = restTemplate.getForEntity(url, ExampleInfo::class.java)
+    // Then
+    assertThat(responseEntity.statusCode).isEqualTo(HttpStatus.OK)
+    assertThat(responseEntity.body).isNotNull
+    assertThat(responseEntity.body.examples).isNotEmpty.extracting("description").contains("Johnny Johnny Yes Papa !!")
+  }
 
-    private fun mockExample(id: Long, description: String): Example {
-        return Example(id, description)
-    }
+  private fun mockExample(id: Long, description: String): Example {
+    return Example(id, description)
+  }
 
-    private fun mockExampleInfo(): ExampleInfo {
-        return ExampleInfo(listOf(mockExample(1L, "Johnny Johnny Yes Papa !!")))
-    }
+  private fun mockExampleInfo(): ExampleInfo {
+    return ExampleInfo(listOf(mockExample(1L, "Johnny Johnny Yes Papa !!")))
+  }
 }

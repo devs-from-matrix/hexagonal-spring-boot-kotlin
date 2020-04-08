@@ -11,8 +11,8 @@ import packageName.domain.exception.ExampleNotFoundException
 @RestControllerAdvice(basePackages = ["packageName"])
 class ExampleExceptionHandler {
 
-    @ExceptionHandler(value = [ExampleNotFoundException::class])
-    fun handleExampleNotFoundException(request: WebRequest): ResponseEntity<ExampleExceptionResponse> {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ExampleExceptionResponse("Example not found", (request as ServletWebRequest).request.requestURI))
-    }
+  @ExceptionHandler(value = [ExampleNotFoundException::class])
+  fun handleExampleNotFoundException(request: WebRequest): ResponseEntity<ExampleExceptionResponse> {
+    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ExampleExceptionResponse("Example not found", (request as ServletWebRequest).request.requestURI))
+  }
 }

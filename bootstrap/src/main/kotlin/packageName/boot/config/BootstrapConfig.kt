@@ -12,8 +12,8 @@ import packageName.repository.config.JpaAdapterConfig
 @Import(JpaAdapterConfig::class)
 class BootstrapConfig {
 
-    @Bean
-    fun getRequestExample(obtainExample: ObtainExample): RequestExample {
-        return ExampleDomain(obtainExample)
-    }
+  @Bean
+  fun getRequestExample(obtainExample: ObtainExample): RequestExample {
+    return ExampleDomain(obtainExample)
+  }
 }

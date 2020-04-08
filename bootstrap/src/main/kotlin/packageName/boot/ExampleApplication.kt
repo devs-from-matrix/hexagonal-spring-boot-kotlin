@@ -10,5 +10,5 @@ class ExampleApplication {
 }
 
 fun main(args: Array<String>) {
-    SpringApplication.run(ExampleApplication::class.java, *args)
+  SpringApplication.run(ExampleApplication::class.java, *args)
 }
