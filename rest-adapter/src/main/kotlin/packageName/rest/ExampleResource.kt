@@ -11,8 +11,8 @@ import packageName.domain.port.RequestExample
 @RequestMapping("/api/v1/examples")
 class ExampleResource(private val requestExample: RequestExample) {
 
-    @GetMapping
-    fun getExamples(): ResponseEntity<ExampleInfo> {
-        return ResponseEntity.ok(requestExample.getExamples())
-    }
+  @GetMapping
+  fun getExamples(): ResponseEntity<ExampleInfo> {
+    return ResponseEntity.ok(requestExample.getExamples())
+  }
 }

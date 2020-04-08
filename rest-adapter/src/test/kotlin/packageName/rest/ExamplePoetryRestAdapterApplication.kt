@@ -10,10 +10,10 @@ import packageName.domain.port.RequestExample
 @ComponentScan(basePackages = ["packageName"])
 class ExamplePoetryRestAdapterApplication {
 
-    @MockBean
-    private lateinit var requestExample: RequestExample
+  @MockBean
+  private lateinit var requestExample: RequestExample
 }
 
 fun main(args: Array<String>) {
-    SpringApplication.run(ExamplePoetryRestAdapterApplication::class.java, *args)
+  SpringApplication.run(ExamplePoetryRestAdapterApplication::class.java, *args)
 }

@@ -13,21 +13,21 @@ import packageName.domain.port.ObtainExample
 @DataJpaTest
 class ExampleJpaTest {
 
-    @Autowired
-    private lateinit var obtainExample: ObtainExample
+  @Autowired
+  private lateinit var obtainExample: ObtainExample
 
-    @Test
-    fun `should start the application`() {
-        assertThat(java.lang.Boolean.TRUE).isTrue()
-    }
+  @Test
+  fun `should start the application`() {
+    assertThat(java.lang.Boolean.TRUE).isTrue()
+  }
 
-    @Sql(scripts = ["/sql/data.sql"])
-    @Test
-    fun `should give me examples when asked for examples from database`() {
-        // Given from @Sql
-        // When
-        val examples = obtainExample.getAllExamples()
-        // Then
-        assertThat(examples).isNotNull.extracting("description").contains("Twinkle twinkle little star")
-    }
+  @Sql(scripts = ["/sql/data.sql"])
+  @Test
+  fun `should give me examples when asked for examples from database`() {
+    // Given from @Sql
+    // When
+    val examples = obtainExample.getAllExamples()
+    // Then
+    assertThat(examples).isNotNull.extracting("description").contains("Twinkle twinkle little star")
+  }
 }

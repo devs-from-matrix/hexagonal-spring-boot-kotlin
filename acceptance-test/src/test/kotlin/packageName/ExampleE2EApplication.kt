@@ -13,16 +13,16 @@ import packageName.repository.config.JpaAdapterConfig
 @SpringBootApplication
 class ExampleE2EApplication {
 
-    @TestConfiguration
-    @Import(JpaAdapterConfig::class)
-    class ExampleConfig {
-        @Bean
-        fun getRequestExample(obtainExample: ObtainExample): RequestExample {
-            return ExampleDomain(obtainExample)
-        }
+  @TestConfiguration
+  @Import(JpaAdapterConfig::class)
+  class ExampleConfig {
+    @Bean
+    fun getRequestExample(obtainExample: ObtainExample): RequestExample {
+      return ExampleDomain(obtainExample)
     }
+  }
 }
 
 fun main(args: Array<String>) {
-    SpringApplication.run(ExampleE2EApplication::class.java)
+  SpringApplication.run(ExampleE2EApplication::class.java)
 }

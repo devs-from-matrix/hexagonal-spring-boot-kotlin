@@ -6,9 +6,9 @@ import packageName.domain.port.RequestExample
 
 class ExampleDomain(private val obtainExample: ObtainExample) : RequestExample {
 
-    constructor() : this(object : ObtainExample {})
+  constructor() : this(object : ObtainExample {})
 
-    override fun getExamples(): ExampleInfo {
-        return ExampleInfo(obtainExample.getAllExamples())
-    }
+  override fun getExamples(): ExampleInfo {
+    return ExampleInfo(obtainExample.getAllExamples())
+  }
 }

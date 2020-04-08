@@ -13,8 +13,8 @@ import packageName.repository.dao.ExampleDao
 @EnableJpaRepositories("packageName.repository.dao")
 class JpaAdapterConfig {
 
-    @Bean
-    fun getExampleRepository(exampleDao: ExampleDao): ObtainExample {
-        return ExampleRepository(exampleDao)
-    }
+  @Bean
+  fun getExampleRepository(exampleDao: ExampleDao): ObtainExample {
+    return ExampleRepository(exampleDao)
+  }
 }
