@@ -1,6 +1,6 @@
-package packageName.repository.entity
+package packagename.repository.entity
 
-import packageName.domain.model.Example
+import packagename.domain.model.Example
 import javax.persistence.*
 import javax.persistence.GenerationType.AUTO
 

@@ -1,8 +1,8 @@
-package packageName.repository
+package packagename.repository
 
-import packageName.domain.model.Example
-import packageName.domain.port.ObtainExample
-import packageName.repository.dao.ExampleDao
+import packagename.domain.model.Example
+import packagename.domain.port.ObtainExample
+import packagename.repository.dao.ExampleDao
 
 class ExampleRepository(private val exampleDao: ExampleDao) : ObtainExample {
 
