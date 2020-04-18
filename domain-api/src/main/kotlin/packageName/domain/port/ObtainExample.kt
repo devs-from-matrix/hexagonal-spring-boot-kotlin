@@ -1,6 +1,6 @@
-package packageName.domain.port
+package packagename.domain.port
 
-import packageName.domain.model.Example
+import packagename.domain.model.Example
 
 interface ObtainExample {
 

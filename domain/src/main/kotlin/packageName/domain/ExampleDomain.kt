@@ -1,8 +1,8 @@
-package packageName.domain
+package packagename.domain
 
-import packageName.domain.model.ExampleInfo
-import packageName.domain.port.ObtainExample
-import packageName.domain.port.RequestExample
+import packagename.domain.model.ExampleInfo
+import packagename.domain.port.ObtainExample
+import packagename.domain.port.RequestExample
 
 class ExampleDomain(private val obtainExample: ObtainExample) : RequestExample {
 

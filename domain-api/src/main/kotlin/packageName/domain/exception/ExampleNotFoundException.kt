@@ -1,4 +1,4 @@
-package packageName.domain.exception
+package packagename.domain.exception
 
 class ExampleNotFoundException : RuntimeException()
 

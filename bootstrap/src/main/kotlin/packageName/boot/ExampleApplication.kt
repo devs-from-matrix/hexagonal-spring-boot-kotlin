@@ -1,11 +1,11 @@
-package packageName.boot
+package packagename.boot
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.annotation.ComponentScan
 
 @SpringBootApplication
-@ComponentScan(basePackages = ["packageName"])
+@ComponentScan(basePackages = ["packagename"])
 class ExampleApplication {
 }
 

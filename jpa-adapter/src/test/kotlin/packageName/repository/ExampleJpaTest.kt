@@ -1,4 +1,4 @@
-package packageName.repository
+package packagename.repository
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import org.springframework.test.context.jdbc.Sql
 import org.springframework.test.context.junit.jupiter.SpringExtension
-import packageName.domain.port.ObtainExample
+import packagename.domain.port.ObtainExample
 
 @ExtendWith(SpringExtension::class)
 @DataJpaTest
