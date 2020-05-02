@@ -1,4 +1,4 @@
 package packagename.domain.exception
 
-class ExampleNotFoundException : RuntimeException()
+class ExampleNotFoundException(id: Long) : RuntimeException("Example with code: [$id] does not exists")
 
