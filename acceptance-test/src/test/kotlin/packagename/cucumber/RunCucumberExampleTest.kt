@@ -5,5 +5,9 @@ import io.cucumber.junit.CucumberOptions
 import org.junit.runner.RunWith
 
 @RunWith(Cucumber::class)
-@CucumberOptions(features = ["classpath:features"], strict = true, plugin = ["json:target/cucumber/example.json", "json:target/cucumber/example.xml"], tags = ["@Example"], glue = ["classpath:packagename.cucumber"])
+@CucumberOptions(features = ["classpath:features/example.feature"],
+    strict = true,
+    plugin = ["json:target/cucumber/example.json", "json:target/cucumber/example.xml"],
+    tags = ["@Example"],
+    glue = ["classpath:packagename.cucumber"])
 class RunCucumberExampleTest

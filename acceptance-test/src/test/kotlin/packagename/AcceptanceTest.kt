@@ -1,6 +1,7 @@
 package packagename
 
 import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.junit.platform.runner.JUnitPlatform
@@ -9,8 +10,10 @@ import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.junit.jupiter.MockitoExtension
 import packagename.domain.ExampleDomain
+import packagename.domain.exception.ExampleNotFoundException
 import packagename.domain.model.Example
 import packagename.domain.port.ObtainExample
+import java.util.*
 
 @ExtendWith(MockitoExtension::class)
 @RunWith(JUnitPlatform::class)
@@ -23,7 +26,7 @@ class AcceptanceTest {
       ExampleDomain     - hexagon (domain)
       ObtainExample     - right side port
     */
-    val requestExample = ExampleDomain() // the poem is hard coded
+    val requestExample = ExampleDomain() // the example is hard coded
     val exampleInfo = requestExample.getExamples()
     assertThat(exampleInfo).isNotNull
     assertThat(exampleInfo.examples).isNotEmpty.extracting("description")
@@ -41,5 +44,33 @@ class AcceptanceTest {
     assertThat(exampleInfo).isNotNull
     assertThat(exampleInfo.examples).isNotEmpty.extracting("description")
         .contains("I want to sleep\r\nSwat the flies\r\nSoftly, please.\r\n\r\n-- Masaoka Shiki (1867-1902)")
+  }
+
+  @Test
+  fun `should be able to get example when asked for example by id from stub`(@Mock obtainExample: ObtainExample) {
+    // Given
+    // stub
+    val code = 1L
+    val description = "I want to sleep\r\nSwat the flies\r\nSoftly, please.\r\n\r\n-- Masaoka Shiki (1867-1902)"
+    val expectedExample = Example(code, description)
+    Mockito.lenient().`when`(obtainExample.getExampleByCode(code)).thenReturn(Optional.of(expectedExample))
+    // When
+    val requestExample = ExampleDomain(obtainExample)
+    val actualExample = requestExample.getExampleByCode(code)
+    // Then
+    assertThat(actualExample).isNotNull.isEqualTo(expectedExample)
+  }
+
+  @Test
+  fun `should be throw exception when asked for example by id that does not exists from stub`(@Mock obtainExample: ObtainExample) {
+    // Given
+    // stub
+    val code = -1000L
+    Mockito.lenient().`when`(obtainExample.getExampleByCode(code)).thenReturn(Optional.empty())
+    // When
+    val requestExample = ExampleDomain(obtainExample)
+    // Then
+    assertThatThrownBy { requestExample.getExampleByCode(code) }.isInstanceOf(ExampleNotFoundException::class.java)
+        .hasMessageContaining("Example with code: [$code] does not exists")
   }
 }
