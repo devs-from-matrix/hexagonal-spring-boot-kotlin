@@ -8,7 +8,7 @@ buildscript {
   }
 
   ext {
-    ver = [
+    libVersion = [
         kotlin                    : '1.3.72',
         cucumber                  : '6.2.2',
         springBoot                : '2.3.1.RELEASE',
@@ -25,12 +25,14 @@ buildscript {
   }
 
   dependencies {
-    classpath group: 'io.spring.gradle', name: 'dependency-management-plugin', version: ver.springDependencyManagement
-    classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: ver.springBoot
-    classpath group: 'com.societegenerale.commons', name: 'arch-unit-gradle-plugin', version: ver.archUnit
-    classpath group: 'org.sonarsource.scanner.gradle', name: 'sonarqube-gradle-plugin', version: ver.sonarQube
+    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${libVersion.kotlin}")
+    classpath("org.jetbrains.kotlin:kotlin-allopen:${libVersion.kotlin}")
+    classpath("org.jetbrains.kotlin:kotlin-noarg:${libVersion.kotlin}")
+    classpath("io.spring.gradle:dependency-management-plugin:${libVersion.springDependencyManagement}")
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${libVersion.springBoot}")
+    classpath("com.societegenerale.commons:arch-unit-gradle-plugin:${libVersion.archUnit}")
+    classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:${libVersion.sonarQube}")
   }
-
 }
 
 allprojects {
@@ -46,48 +48,43 @@ allprojects {
   }
 
   apply plugin: 'base'
+  apply plugin: 'kotlin'
   apply from: "$rootDir/gradle/jacoco.gradle"
 
   jacoco {
-    toolVersion = ver.jacoco
+    toolVersion = libVersion.jacoco
   }
 }
 
 subprojects {
-  apply plugin: 'java'
   apply plugin: 'io.spring.dependency-management'
-  apply plugin: 'java-library'
   apply plugin: 'com.societegenerale.commons.plugin.gradle.ArchUnitGradlePlugin'
 
   dependencies {
-    implementation group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk8', version: ver.kotlin
-    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: ver.findbugsJsr305
-    testImplementation group: 'org.jetbrains.kotlin', name: 'kotlin-test', version: ver.kotlin
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api'
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine'
-    testImplementation group: 'org.junit.vintage', name: 'junit-vintage-engine'
-    testImplementation group: 'org.junit.platform', name: 'junit-platform-launcher'
-    testImplementation group: 'org.junit.platform', name: 'junit-platform-runner'
-    testImplementation group: 'org.junit.platform', name: 'junit-platform-engine'
-    testImplementation group: 'org.junit.platform', name: 'junit-platform-commons'
-    testImplementation group: 'org.mockito', name: 'mockito-core'
-    testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter'
-    testImplementation group: 'io.cucumber', name: 'cucumber-java8', version: ver.cucumber
-    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: ver.cucumber
-    testImplementation group: 'io.cucumber', name: 'cucumber-spring', version: ver.cucumber
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${libVersion.kotlin}")
+    implementation("com.google.code.findbugs:jsr305:${libVersion.findbugsJsr305}")
+    testImplementation("org.jetbrains.kotlin:kotlin-test:${libVersion.kotlin}")
+    testImplementation("org.junit.jupiter:junit-jupiter-api")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine")
+    testImplementation("org.junit.vintage:junit-vintage-engine")
+    testImplementation("org.junit.platform:junit-platform-launcher")
+    testImplementation("org.junit.platform:junit-platform-runner")
+    testImplementation("org.junit.platform:junit-platform-engine")
+    testImplementation("org.junit.platform:junit-platform-commons")
+    testImplementation("org.mockito:mockito-core")
+    testImplementation("org.mockito:mockito-junit-jupiter")
+    testImplementation("io.cucumber:cucumber-java8:${libVersion.cucumber}")
+    testImplementation("io.cucumber:cucumber-junit:${libVersion.cucumber}")
+    testImplementation("io.cucumber:cucumber-spring:${libVersion.cucumber}")
   }
 
   dependencyManagement {
     imports {
-      mavenBom("org.springframework.boot:spring-boot-dependencies:2.3.1.RELEASE")
+      mavenBom("org.springframework.boot:spring-boot-dependencies:${libVersion.springBoot}")
     }
   }
 
   sourceCompatibility = JavaVersion.VERSION_11
-
-  tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-  }
 
   test {
     useJUnitPlatform()
@@ -97,14 +94,11 @@ subprojects {
   archUnit {
     preConfiguredRules = [
         "com.societegenerale.commons.plugin.rules.NoInjectedFieldTest",
-        "com.societegenerale.commons.plugin.rules.NoAutowiredFieldTest",
         "com.societegenerale.commons.plugin.rules.NoTestIgnoreWithoutCommentRuleTest",
         "com.societegenerale.commons.plugin.rules.NoPrefixForInterfacesRuleTest",
         "com.societegenerale.commons.plugin.rules.NoPowerMockRuleTest",
         "com.societegenerale.commons.plugin.rules.NoJodaTimeRuleTest",
         "com.societegenerale.commons.plugin.rules.NoJunitAssertRuleTest",
-        "com.societegenerale.commons.plugin.rules.HexagonalArchitectureTest",
-        "com.societegenerale.commons.plugin.rules.DontReturnNullCollectionTest",
         "com.societegenerale.commons.plugin.rules.StringFieldsThatAreActuallyDatesRuleTest"
     ]
     configurableRules = [configurableRule("com.tngtech.archunit.library.GeneralCodingRules", applyOn("org.dfm.packagename", "main"))]

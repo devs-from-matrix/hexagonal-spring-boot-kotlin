@@ -50,7 +50,7 @@ class ExampleResourceTest {
     // Then
     assertThat(responseEntity.statusCode).isEqualTo(HttpStatus.OK)
     assertThat(responseEntity.body).isNotNull
-    assertThat(responseEntity.body.examples).isNotEmpty.extracting("description").contains("Johnny Johnny Yes Papa !!")
+    assertThat(responseEntity.body?.examples).isNotEmpty.extracting("description").contains("Johnny Johnny Yes Papa !!")
   }
 
   @Test

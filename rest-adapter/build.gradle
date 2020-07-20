@@ -1,8 +1,10 @@
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'kotlin-spring'
 
 dependencies {
     implementation project(':domain-api')
     api 'org.springframework.boot:spring-boot-starter-web'
-    implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: ver.springdoc
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:${libVersion.jacksonModuleKotlin}")
+    implementation("org.springdoc:springdoc-openapi-ui:${libVersion.springdoc}")
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

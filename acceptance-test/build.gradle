@@ -1,7 +1,23 @@
+apply plugin: 'kotlin-spring'
+
 dependencies {
   implementation project(':rest-adapter')
   implementation project(':domain')
   implementation project(':jpa-adapter')
-  implementation group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: ver.jacksonModuleKotlin
+  implementation group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: libVersion.jacksonModuleKotlin
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'com.h2database:h2'
+}
+
+archUnit {
+  preConfiguredRules = [
+      "com.societegenerale.commons.plugin.rules.NoInjectedFieldTest",
+      "com.societegenerale.commons.plugin.rules.NoTestIgnoreWithoutCommentRuleTest",
+      "com.societegenerale.commons.plugin.rules.NoPrefixForInterfacesRuleTest",
+      "com.societegenerale.commons.plugin.rules.NoPowerMockRuleTest",
+      "com.societegenerale.commons.plugin.rules.NoJodaTimeRuleTest",
+      "com.societegenerale.commons.plugin.rules.NoJunitAssertRuleTest",
+      "com.societegenerale.commons.plugin.rules.StringFieldsThatAreActuallyDatesRuleTest"
+  ]
+  configurableRules = [configurableRule("com.tngtech.archunit.library.GeneralCodingRules", applyOn("org.dfm.packagename", "main"))]
 }
