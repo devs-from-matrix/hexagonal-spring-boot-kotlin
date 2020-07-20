@@ -1,0 +1,7 @@
+dependencies {
+  implementation project(':domain-api')
+  api 'org.springframework.boot:spring-boot-starter-data-jpa'
+  implementation group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: ver.jacksonModuleKotlin
+  testImplementation 'com.h2database:h2'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}

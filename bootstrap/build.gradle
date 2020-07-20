@@ -1,0 +1,16 @@
+apply plugin: 'org.springframework.boot'
+
+bootJar {
+  mainClassName = 'packagename.boot.ExampleApplication'
+  archiveFileName = "${rootProject.name}.jar"
+}
+
+dependencies {
+  implementation project(':rest-adapter')
+  implementation project(':domain')
+  implementation project(':jpa-adapter')
+  implementation 'org.springframework.boot:spring-boot-starter-actuator'
+  implementation 'org.springframework.boot:spring-boot-devtools'
+  // todo: this has to be replaced with actual db driver
+  implementation 'com.h2database:h2'
+}

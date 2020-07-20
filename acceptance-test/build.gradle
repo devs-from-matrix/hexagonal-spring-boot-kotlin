@@ -1,0 +1,7 @@
+dependencies {
+  implementation project(':rest-adapter')
+  implementation project(':domain')
+  implementation project(':jpa-adapter')
+  implementation group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: ver.jacksonModuleKotlin
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
