@@ -28,7 +28,7 @@
     <jakarta.activation>1.2.2</jakarta.activation>
     <cucumber.messages>12.4.0</cucumber.messages>
     <!-- plugins -->
-    <cukedoctor-maven-plugin.version>3.1</cukedoctor-maven-plugin.version>
+    <cukedoctor-maven-plugin.version>3.2</cukedoctor-maven-plugin.version>
     <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
     <maven-enforcer-plugin>3.0.0-M3</maven-enforcer-plugin>
     <jackson-module-kotlin.version>2.11.2</jackson-module-kotlin.version>
