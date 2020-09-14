@@ -13,7 +13,7 @@
     <kotlin.version>1.4.10</kotlin.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <junit.version>5.6.2</junit.version>
+    <junit.version>5.7.0</junit.version>
     <junit.platform.version>1.6.2</junit.platform.version>
     <cucumber.version>6.6.1</cucumber.version>
     <mockito.version>3.5.10</mockito.version>
