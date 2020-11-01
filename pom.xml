@@ -17,7 +17,6 @@
     <junit.platform.version>1.7.0</junit.platform.version>
     <cucumber.version>6.8.1</cucumber.version>
     <mockito.version>3.6.0</mockito.version>
-    <cucumber.version>6.4.0</cucumber.version>
     <spring-boot.version>2.3.5.RELEASE</spring-boot.version>
     <slf4j.version>1.7.30</slf4j.version>
     <springdoc.version>1.4.8</springdoc.version>
@@ -26,7 +25,6 @@
     <hsqldb.version>2.5.1</hsqldb.version>
     <jakarta.xml.bind.version>2.3.3</jakarta.xml.bind.version>
     <jakarta.activation>2.0.0</jakarta.activation>
-    <cucumber.messages>12.4.0</cucumber.messages>
     <!-- plugins -->
     <cukedoctor-maven-plugin.version>3.3</cukedoctor-maven-plugin.version>
     <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
@@ -330,18 +328,6 @@
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java8</artifactId>
       <version>${cucumber.version}</version>
-      <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>messages</artifactId>
-          <groupId>io.cucumber</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <artifactId>messages</artifactId>
-      <groupId>io.cucumber</groupId>
-      <version>${cucumber.messages}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
