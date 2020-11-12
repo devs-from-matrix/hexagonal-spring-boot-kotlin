@@ -15,7 +15,7 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <junit.version>5.7.0</junit.version>
     <junit.platform.version>1.7.0</junit.platform.version>
-    <cucumber.version>6.8.1</cucumber.version>
+    <cucumber.version>6.9.0</cucumber.version>
     <mockito.version>3.6.0</mockito.version>
     <spring-boot.version>2.3.5.RELEASE</spring-boot.version>
     <slf4j.version>1.7.30</slf4j.version>
