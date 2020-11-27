@@ -9,7 +9,7 @@ import javax.persistence.*
 data class ExampleEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_T_EXAMPLE")
-    @SequenceGenerator(name = "SEQ_T_EXAMPLE", sequenceName = "TEST.SEQ_T_EXAMPLE", allocationSize = 1, initialValue = 1)
+    @SequenceGenerator(name = "SEQ_T_EXAMPLE", sequenceName = "SEQ_T_EXAMPLE", allocationSize = 1, initialValue = 1)
     @Column(name = "TECH_ID")
     private val techId: Long? = null,
     @Column(name = "CODE")
