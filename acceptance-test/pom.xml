@@ -22,10 +22,6 @@
       <groupId>org.dfm</groupId>
       <artifactId>jpa-adapter</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.module</groupId>
-      <artifactId>jackson-module-kotlin</artifactId>
-    </dependency>
     <!-- Test -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
