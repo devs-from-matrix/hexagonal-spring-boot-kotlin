@@ -28,6 +28,7 @@
     <cukedoctor-maven-plugin.version>3.3</cukedoctor-maven-plugin.version>
     <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
     <maven-enforcer-plugin>3.0.0-M3</maven-enforcer-plugin>
+    <arch-unit-maven-plugin.version>2.6.2</arch-unit-maven-plugin.version>
     <jackson-module-kotlin.version>2.11.3</jackson-module-kotlin.version>
     <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
     <jib-maven.plugin.version>2.6.0</jib-maven.plugin.version>
@@ -396,6 +397,19 @@
           <groupId>com.google.cloud.tools</groupId>
           <artifactId>jib-maven-plugin</artifactId>
           <version>${jib-maven.plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>com.societegenerale.commons</groupId>
+          <artifactId>arch-unit-maven-plugin</artifactId>
+          <version>${arch-unit-maven-plugin.version}</version>
+          <executions>
+            <execution>
+              <phase>test</phase>
+              <goals>
+                <goal>arch-test</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>
