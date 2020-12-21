@@ -21,7 +21,7 @@
     <slf4j.version>1.7.30</slf4j.version>
     <springdoc.version>1.5.2</springdoc.version>
     <commons-lang3.version>3.11</commons-lang3.version>
-    <h2.version>1.3.176</h2.version>
+    <h2.version>1.4.200</h2.version>
     <jakarta.xml.bind.version>2.3.3</jakarta.xml.bind.version>
     <jboss-logging.version>3.4.1.Final</jboss-logging.version>
     <liquibase.version>4.2.2</liquibase.version>
