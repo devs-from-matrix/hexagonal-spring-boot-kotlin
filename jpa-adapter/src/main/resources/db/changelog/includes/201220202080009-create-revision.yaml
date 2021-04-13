@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-t_example_audit
+      author: Paul WILLIAMS
+      changes:
+        - createTable:
+            tableName: REVINFO
+            columns:
+              - column:
+                  name: REV
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  autoIncrement: true
+              - column:
+                  name: REVTSTMP
+                  type: BIGINT
+                  constraints:
+                    nullable: false
