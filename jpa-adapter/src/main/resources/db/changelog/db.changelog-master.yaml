@@ -1,3 +1,7 @@
 databaseChangeLog:
   - include:
+      file: db/changelog/includes/201220202080009-create-revision.yaml
+  - include:
       file: db/changelog/includes/201220202080010-create-example.yaml
+  - include:
+      file: db/changelog/includes/201220202080011-create-example-audit.yaml

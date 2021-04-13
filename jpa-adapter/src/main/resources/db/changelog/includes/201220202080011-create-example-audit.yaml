@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-t_example_aud
+      author: Paul WILLIAMS
+      changes:
+        - createTable:
+            tableName: T_EXAMPLE_AUD
+            columns:
+              - column:
+                  name: TECH_ID
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: CODE
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: DESCRIPTION
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: REV
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: FK_T_EXAMPLE_AUD_REV
+                    references: REVINFO(REV)
+              - column:
+                  name: REVTYPE
+                  type: INTEGER
+                  constraints:
+                    nullable: false
+        - addPrimaryKey:
+            tableName: T_EXAMPLE_AUD
+            columnNames: TECH_ID, REV
+
+

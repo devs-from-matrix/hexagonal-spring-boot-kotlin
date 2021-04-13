@@ -5,5 +5,11 @@ spring:
   jpa:
     generate-ddl: false
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      org:
+        hibernate:
+          envers:
+#            default_schema: app_audit
+            store_data_at_delete: true

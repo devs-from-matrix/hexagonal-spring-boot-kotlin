@@ -25,6 +25,7 @@
     <jakarta.xml.bind.version>2.3.3</jakarta.xml.bind.version>
     <jboss-logging.version>3.4.1.Final</jboss-logging.version>
     <liquibase.version>4.3.3</liquibase.version>
+    <hibernate-envers.version>5.4.29.Final</hibernate-envers.version>
     <!-- plugins -->
     <cukedoctor-maven-plugin.version>3.5.1</cukedoctor-maven-plugin.version>
     <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
@@ -110,6 +111,26 @@
             <groupId>org.jboss.logging</groupId>
           </exclusion>
         </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-envers</artifactId>
+        <version>${spring-boot.version}</version>
+        <exclusions>
+          <exclusion>
+            <artifactId>spring-data-jpa</artifactId>
+            <groupId>org.springframework.data</groupId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-envers</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-envers</artifactId>
+        <version>${hibernate-envers.version}</version>
       </dependency>
       <dependency>
         <artifactId>jboss-logging</artifactId>

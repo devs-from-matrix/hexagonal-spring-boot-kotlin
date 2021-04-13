@@ -1,11 +1,13 @@
 package packagename.repository.entity
 
+import org.hibernate.envers.Audited
 import packagename.domain.model.Example
 import javax.persistence.*
 
 @Table(name = "T_EXAMPLE")
 @Entity
 @SequenceGenerator(name = "SEQ_T_EXAMPLE", initialValue = 1, allocationSize = 100)
+@Audited
 data class ExampleEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_T_EXAMPLE")
