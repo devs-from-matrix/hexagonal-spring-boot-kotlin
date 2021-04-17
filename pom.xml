@@ -35,6 +35,7 @@
     <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
     <jib-maven.plugin.version>3.0.0</jib-maven.plugin.version>
     <git-code-format-maven-plugin.version>3.0</git-code-format-maven-plugin.version>
+    <githook-maven-plugin.version>1.0.5</githook-maven-plugin.version>
   </properties>
   <modules>
     <module>domain</module>
@@ -430,6 +431,28 @@
             <goals>
               <goal>validate-code-format</goal>
             </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>io.github.phillipuniverse</groupId>
+        <artifactId>githook-maven-plugin</artifactId>
+        <version>${githook-maven-plugin.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>install</goal>
+            </goals>
+            <configuration>
+              <hooks>
+                <pre-commit>
+                  echo "Validating..."
+                  exec mvn test
+                  echo "Validating format..."
+                  exec mvn git-code-format:validate-code-format
+                </pre-commit>
+              </hooks>
+            </configuration>
           </execution>
         </executions>
       </plugin>
