@@ -29,6 +29,12 @@ Use it with caution as these will be used by the app-generator to replace them w
 
 `cd bootstrap && mvn spring-boot:run`
 
+## Formatting
+
+This project uses [git-code-format-maven-plugin](https://github.com/Cosium/git-code-format-maven-plugin) for formatting the code per [google style guide](https://google.github.io/styleguide/javaguide.html)
+
+> **`mvn git-code-format:format-code`**
+
 ## Contribution guidelines
 
 We are really glad you're reading this, because we need volunteer developers to help this project come to fruition.
@@ -38,3 +44,5 @@ Request you to please read our [contribution guidelines](https://devs-from-matri
 ## Author(s) of this template
 
 - [Sundar](https://github.com/sundardamon)
+- [Paul WILLIAMS](https://github.com/paul58914080)
+- [Anup KUMAR](https://github.com/anupbaranwal)
