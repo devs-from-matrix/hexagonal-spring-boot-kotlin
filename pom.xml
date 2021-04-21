@@ -27,7 +27,7 @@
     <liquibase.version>4.3.3</liquibase.version>
     <hibernate-envers.version>5.4.29.Final</hibernate-envers.version>
     <!-- plugins -->
-    <cukedoctor-maven-plugin.version>3.5.1</cukedoctor-maven-plugin.version>
+    <cukedoctor-maven-plugin.version>3.6.0</cukedoctor-maven-plugin.version>
     <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
     <maven-enforcer-plugin>3.0.0-M3</maven-enforcer-plugin>
     <arch-unit-maven-plugin.version>2.7.3</arch-unit-maven-plugin.version>
