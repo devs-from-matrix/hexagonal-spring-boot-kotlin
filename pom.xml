@@ -24,7 +24,7 @@
     <h2.version>1.4.200</h2.version>
     <jakarta.xml.bind.version>2.3.3</jakarta.xml.bind.version>
     <jboss-logging.version>3.4.1.Final</jboss-logging.version>
-    <liquibase.version>4.3.3</liquibase.version>
+    <liquibase.version>4.3.4</liquibase.version>
     <hibernate-envers.version>5.4.29.Final</hibernate-envers.version>
     <!-- plugins -->
     <cukedoctor-maven-plugin.version>3.5.1</cukedoctor-maven-plugin.version>
