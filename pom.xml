@@ -22,7 +22,7 @@
     <springdoc.version>1.5.7</springdoc.version>
     <commons-lang3.version>3.11</commons-lang3.version>
     <h2.version>1.4.200</h2.version>
-    <jakarta.xml.bind.version>2.3.3</jakarta.xml.bind.version>
+    <jakarta.xml.bind.version>3.0.1</jakarta.xml.bind.version>
     <jboss-logging.version>3.4.1.Final</jboss-logging.version>
     <liquibase.version>4.3.3</liquibase.version>
     <hibernate-envers.version>5.4.29.Final</hibernate-envers.version>
