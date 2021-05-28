@@ -40,6 +40,11 @@
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-envers</artifactId>
     </dependency>
+    <dependency>
+      <groupId>javax.activation</groupId>
+      <artifactId>activation</artifactId>
+      <version>${javax.activation.version}</version>
+    </dependency>
     <!-- Test -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
