@@ -45,6 +45,10 @@
       <artifactId>activation</artifactId>
       <version>${javax.activation.version}</version>
     </dependency>
+    <dependency>
+      <groupId>net.lbruun.springboot</groupId>
+      <artifactId>preliquibase-spring-boot-starter</artifactId>
+    </dependency>
     <!-- Test -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
