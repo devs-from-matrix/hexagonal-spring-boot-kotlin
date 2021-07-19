@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
+import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.jdbc.Sql
 import org.springframework.test.context.junit.jupiter.SpringExtension
 import packagename.domain.model.Example
@@ -12,6 +13,7 @@ import packagename.domain.port.ObtainExample
 
 @ExtendWith(SpringExtension::class)
 @DataJpaTest
+@ActiveProfiles("test")
 class ExampleJpaTest {
 
   @Autowired
@@ -19,7 +21,7 @@ class ExampleJpaTest {
 
   @Test
   fun `should start the application`() {
-    assertThat(java.lang.Boolean.TRUE).isTrue()
+    assertThat(java.lang.Boolean.TRUE).isTrue
   }
 
   @Sql(scripts = ["/sql/data.sql"])
