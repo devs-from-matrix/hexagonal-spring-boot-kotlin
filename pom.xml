@@ -25,7 +25,7 @@
     <jakarta.xml.bind.version>3.0.1</jakarta.xml.bind.version>
     <jboss-logging.version>3.4.2.Final</jboss-logging.version>
     <liquibase.version>4.4.1</liquibase.version>
-    <hibernate-envers.version>5.4.32.Final</hibernate-envers.version>
+    <hibernate-envers.version>5.5.3.Final</hibernate-envers.version>
     <javax.activation.version>1.1.1</javax.activation.version>
     <apiguardian-api.version>1.1.2</apiguardian-api.version>
     <pre-liquibase.version>1.1.1</pre-liquibase.version>
