@@ -6,9 +6,8 @@ import org.springframework.context.annotation.ComponentScan
 
 @SpringBootApplication
 @ComponentScan(basePackages = ["packagename"])
-class ExampleApplication {
-}
+class ExampleApplication
 
-fun main(args: Array<String>) {
-  SpringApplication.run(ExampleApplication::class.java, *args)
+fun main() {
+  SpringApplication.run(ExampleApplication::class.java)
 }
