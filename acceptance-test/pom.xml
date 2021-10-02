@@ -12,15 +12,7 @@
   <dependencies>
     <dependency>
       <groupId>org.dfm</groupId>
-      <artifactId>rest-adapter</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.dfm</groupId>
-      <artifactId>domain</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.dfm</groupId>
-      <artifactId>jpa-adapter</artifactId>
+      <artifactId>bootstrap</artifactId>
     </dependency>
     <!-- Test -->
     <dependency>
