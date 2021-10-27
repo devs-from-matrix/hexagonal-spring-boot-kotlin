@@ -1,3 +1,4 @@
+/*
 package packagename.cucumber
 
 import io.cucumber.datatable.DataTable
@@ -38,8 +39,10 @@ class ExampleStepDef(restTemplate: TestRestTemplate, exampleDao: ExampleDao) : E
 
   init {
 
-    DataTableType { row: Map<String, String> -> Example(row["code"].toString().toLong(), row["description"].toString()) }
-    DataTableType { row: Map<String, String> -> ExampleEntity(code = row["code"].toString().toLong(), description = row["description"].toString()) }
+    */
+/*DataTableType { row: Map<String, String> -> Example(row["code"].toString().toLong(), row["description"].toString()) }
+    DataTableType { row: Map<String, String> -> ExampleEntity(code = row["code"].toString().toLong(), description = row["description"].toString()) }*//*
+
 
     Before { _ -> exampleDao.deleteAll() }
     After { _ -> exampleDao.deleteAll() }
@@ -87,3 +90,4 @@ class ExampleStepDef(restTemplate: TestRestTemplate, exampleDao: ExampleDao) : E
 }
 
 
+*/

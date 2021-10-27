@@ -1,12 +1,12 @@
 package packagename.cucumber
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+import io.cucumber.core.options.Constants.FILTER_TAGS_PROPERTY_NAME
+import io.cucumber.core.options.Constants.GLUE_PROPERTY_NAME
+import org.junit.platform.suite.api.*
 
-@RunWith(Cucumber::class)
-@CucumberOptions(features = ["classpath:features/example.feature"],
-    plugin = ["json:target/cucumber/example.json", "json:target/cucumber/example.xml"],
-    tags = "@Example",
-    glue = ["classpath:packagename.cucumber"])
+@Suite
+@IncludeEngines("cucumber")
+@SelectClasspathResource("features/example.feature")
+@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "packagename.cucumber")
+@ConfigurationParameters(ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "packagename.cucumber"), ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@Example"))
 class RunCucumberExampleTest
