@@ -33,7 +33,7 @@ Use it with caution as these will be used by the app-generator to replace them w
 
 This project uses [git-code-format-maven-plugin](https://github.com/Cosium/git-code-format-maven-plugin) for formatting the code per [google style guide](https://google.github.io/styleguide/javaguide.html)
 
-> **`mvn git-code-format:format-code`**
+`mvn git-code-format:format-code`
 
 ## Contribution guidelines
 
