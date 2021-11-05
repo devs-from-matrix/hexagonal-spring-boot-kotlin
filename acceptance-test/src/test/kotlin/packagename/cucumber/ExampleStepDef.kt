@@ -21,10 +21,6 @@ import packagename.repository.entity.ExampleEntity
 import packagename.rest.exception.ExampleExceptionResponse
 
 
-@ExtendWith(SpringExtension::class)
-@SpringBootTest(classes = [ExampleApplication::class], webEnvironment = RANDOM_PORT)
-@CucumberContextConfiguration
-@ActiveProfiles("test")
 class ExampleStepDef(restTemplate: TestRestTemplate, exampleDao: ExampleDao) : En {
 
   companion object {
