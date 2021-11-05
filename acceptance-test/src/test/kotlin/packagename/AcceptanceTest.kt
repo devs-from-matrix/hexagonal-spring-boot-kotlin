@@ -4,8 +4,6 @@ import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
-import org.junit.platform.runner.JUnitPlatform
-import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.junit.jupiter.MockitoExtension
@@ -16,7 +14,6 @@ import packagename.domain.port.ObtainExample
 import java.util.*
 
 @ExtendWith(MockitoExtension::class)
-@RunWith(JUnitPlatform::class)
 class AcceptanceTest {
 
   @Test
