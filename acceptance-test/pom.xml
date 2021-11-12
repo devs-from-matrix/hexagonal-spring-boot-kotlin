@@ -3,7 +3,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
-    <groupId>org.dfm</groupId>
+    <groupId>packagename</groupId>
     <artifactId>artifactName</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
@@ -14,8 +14,25 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>org.dfm</groupId>
+      <groupId>packagename</groupId>
       <artifactId>bootstrap</artifactId>
+    </dependency>
+    <!-- Important: DO NOT DELETE the below dependencies though might seem like redundant to that of
+    bootstrap but they are required for jacoco and pitest report aggregation -->
+    <!-- left adapter -->
+    <dependency>
+      <groupId>packagename</groupId>
+      <artifactId>rest-adapter</artifactId>
+    </dependency>
+    <!-- domain -->
+    <dependency>
+      <groupId>packagename</groupId>
+      <artifactId>domain</artifactId>
+    </dependency>
+    <!-- right adapter -->
+    <dependency>
+      <groupId>packagename</groupId>
+      <artifactId>jpa-adapter</artifactId>
     </dependency>
     <!-- Test -->
     <dependency>
