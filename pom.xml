@@ -18,6 +18,7 @@
     <cucumber.version>7.0.0</cucumber.version>
     <springdoc.version>1.5.12</springdoc.version>
     <pre-liquibase.version>1.1.1</pre-liquibase.version>
+    <classgraph.version>4.8.116</classgraph.version>
     <!-- plugins -->
     <cukedoctor-maven-plugin.version>3.7.0</cukedoctor-maven-plugin.version>
     <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
@@ -46,6 +47,12 @@
         <groupId>org.jetbrains.kotlin</groupId>
         <artifactId>kotlin-stdlib-jdk8</artifactId>
         <version>${kotlin.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
       <dependency>
         <groupId>org.jetbrains.kotlin</groupId>
@@ -56,6 +63,16 @@
         <groupId>com.fasterxml.jackson.module</groupId>
         <artifactId>jackson-module-kotlin</artifactId>
         <version>${jackson-module-kotlin.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.jetbrains</groupId>
+        <artifactId>annotations</artifactId>
       </dependency>
       <!-- Project module dependency -->
       <dependency>
@@ -103,6 +120,11 @@
         <groupId>org.springdoc</groupId>
         <artifactId>springdoc-openapi-ui</artifactId>
         <version>${springdoc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.github.classgraph</groupId>
+        <artifactId>classgraph</artifactId>
+        <version>${classgraph.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -330,7 +352,9 @@
     <profile>
       <id>mutation-test</id>
       <activation>
-        <property><name>mutation.tests</name></property>
+        <property>
+          <name>mutation.tests</name>
+        </property>
       </activation>
       <build>
         <plugins>
