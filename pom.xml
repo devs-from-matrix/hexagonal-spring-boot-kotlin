@@ -27,7 +27,7 @@
     <jackson-module-kotlin.version>2.13.3</jackson-module-kotlin.version>
     <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
     <jib-maven.plugin.version>3.2.1</jib-maven.plugin.version>
-    <git-code-format-maven-plugin.version>3.3</git-code-format-maven-plugin.version>
+    <git-code-format-maven-plugin.version>3.4</git-code-format-maven-plugin.version>
     <githook-maven-plugin.version>1.0.5</githook-maven-plugin.version>
     <pitest-maven-plugin.version>1.8.0</pitest-maven-plugin.version>
     <pitest-junit5-plugin.version>0.15</pitest-junit5-plugin.version>
