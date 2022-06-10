@@ -22,7 +22,7 @@
     <!-- plugins -->
     <cukedoctor-maven-plugin.version>3.7.0</cukedoctor-maven-plugin.version>
     <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-    <maven-enforcer-plugin>3.0.0</maven-enforcer-plugin>
+    <maven-enforcer-plugin>3.1.0</maven-enforcer-plugin>
     <arch-unit-maven-plugin.version>2.9.2</arch-unit-maven-plugin.version>
     <jackson-module-kotlin.version>2.13.3</jackson-module-kotlin.version>
     <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
