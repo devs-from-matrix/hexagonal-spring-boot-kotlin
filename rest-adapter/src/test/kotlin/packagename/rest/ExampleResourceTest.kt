@@ -6,7 +6,11 @@ import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.Mockito
 import org.mockito.junit.jupiter.MockitoExtension
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest
+import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.context.ActiveProfiles
+import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.web.reactive.server.WebTestClient
 import packagename.domain.exception.ExampleNotFoundException
 import packagename.domain.model.Example
@@ -14,7 +18,6 @@ import packagename.domain.model.ExampleInfo
 import packagename.domain.port.RequestExample
 import packagename.rest.exception.ExampleExceptionResponse
 
-@ExtendWith(MockitoExtension::class)
 @WebFluxTest(ExampleResource::class)
 class ExampleResourceTest {
   companion object {
