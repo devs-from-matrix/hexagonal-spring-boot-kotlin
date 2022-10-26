@@ -140,6 +140,12 @@
       <version>${kotlin.version}</version>
       <scope>test</scope>
     </dependency>
+    <!-- Project Reactor -->
+    <dependency>
+      <groupId>io.projectreactor</groupId>
+      <artifactId>reactor-test</artifactId>
+      <scope>test</scope>
+    </dependency>
     <!-- JUnit 5 dependencies -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
