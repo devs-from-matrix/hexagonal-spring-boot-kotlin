@@ -35,10 +35,10 @@
   <modules>
     <module>domain</module>
     <module>domain-api</module>
+    <!--<module>rest-adapter</module>
     <module>acceptance-test</module>
-    <module>rest-adapter</module>
     <module>jpa-adapter</module>
-    <module>bootstrap</module>
+    <module>bootstrap</module>-->
   </modules>
   <dependencyManagement>
     <dependencies>

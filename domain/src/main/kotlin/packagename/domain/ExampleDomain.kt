@@ -2,23 +2,18 @@ package packagename.domain
 
 import packagename.domain.exception.ExampleNotFoundException
 import packagename.domain.model.Example
-import packagename.domain.model.ExampleInfo
 import packagename.domain.port.ObtainExample
 import packagename.domain.port.RequestExample
+import reactor.core.publisher.Flux
+import reactor.core.publisher.Mono
 
 class ExampleDomain(private val obtainExample: ObtainExample) : RequestExample {
 
   constructor() : this(object : ObtainExample {})
 
-  override fun getExamples(): ExampleInfo {
-    return ExampleInfo(obtainExample.getAllExamples())
-  }
+  override fun getExamples(): Flux<Example> =
+      obtainExample.getAllExamples()
 
-  override fun getExampleByCode(code: Long): Example {
-    val example = obtainExample.getExampleByCode(code)
-    return when(example.isPresent) {
-      true -> example.get()
-      false -> throw ExampleNotFoundException(code)
-    }
-  }
+  override fun getExampleByCode(code: Long): Mono<Example> =
+      obtainExample.getExampleByCode(code).switchIfEmpty(Mono.error(ExampleNotFoundException(code)))
 }
