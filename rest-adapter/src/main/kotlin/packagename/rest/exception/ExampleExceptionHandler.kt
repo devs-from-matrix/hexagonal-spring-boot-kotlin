@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono
 class ExampleExceptionHandler {
 
     @ExceptionHandler(value = [ExampleNotFoundException::class])
-    fun handleExampleNotFoundException(exception: Exception, request: ServerHttpRequest): ResponseEntity<Mono<ExampleExceptionResponse>> {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Mono.just(ExampleExceptionResponse(exception.message, request.uri.path)))
+    fun handleExampleNotFoundException(exception: Exception, request: ServerHttpRequest): Mono<ResponseEntity<ExampleExceptionResponse>> {
+        return Mono.just(ResponseEntity.status(HttpStatus.NOT_FOUND).body(ExampleExceptionResponse(exception.message, request.uri.path)))
     }
 }
