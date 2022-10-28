@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import packagename.domain.model.Example
-import packagename.domain.model.ExampleInfo
+import packagename.rest.representation.ExampleInfo
 import packagename.domain.port.RequestExample
 import reactor.core.publisher.Mono
 
@@ -15,12 +15,17 @@ import reactor.core.publisher.Mono
 class ExampleResource(private val requestExample: RequestExample) {
 
   @GetMapping
-  fun getExamples(): ResponseEntity<Mono<ExampleInfo>> {
-    return ResponseEntity.ok(Mono.just(requestExample.getExamples()))
+  fun getExamples(): Mono<ResponseEntity<ExampleInfo>> {
+    return requestExample.getExamples()
+        .collectList()
+        .map { ResponseEntity.ok(ExampleInfo(it)) }
   }
 
   @GetMapping(path = ["/{code}"])
-  fun getExampleByCode(@PathVariable code: Long): ResponseEntity<Mono<Example>> {
-    return ResponseEntity.ok(Mono.just(requestExample.getExampleByCode(code)))
+  fun getExampleByCode(@PathVariable code: Long): Mono<ResponseEntity<Example>> {
+    return requestExample.getExampleByCode(code)
+        .map {
+          ResponseEntity.ok(it)
+        }
   }
 }

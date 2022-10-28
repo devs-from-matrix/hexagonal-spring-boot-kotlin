@@ -35,7 +35,8 @@
   <modules>
     <module>domain</module>
     <module>domain-api</module>
-    <!--<module>rest-adapter</module>
+    <module>rest-adapter</module>
+    <!--
     <module>acceptance-test</module>
     <module>jpa-adapter</module>
     <module>bootstrap</module>-->
