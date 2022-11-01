@@ -36,10 +36,9 @@
     <module>domain</module>
     <module>domain-api</module>
     <module>rest-adapter</module>
-    <!--
-    <module>acceptance-test</module>
     <module>jpa-adapter</module>
-    <module>bootstrap</module>-->
+    <module>acceptance-test</module>
+    <module>bootstrap</module>
   </modules>
   <dependencyManagement>
     <dependencies>
@@ -119,7 +118,7 @@
       <!-- springdoc ui -->
       <dependency>
         <groupId>org.springdoc</groupId>
-        <artifactId>springdoc-openapi-ui</artifactId>
+        <artifactId>springdoc-openapi-webflux-ui</artifactId>
         <version>${springdoc.version}</version>
       </dependency>
       <dependency>
