@@ -8,8 +8,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.jdbc.Sql
 import org.springframework.test.context.junit.jupiter.SpringExtension
-import packagename.domain.model.Example
 import packagename.domain.port.ObtainExample
+import reactor.test.StepVerifier
 
 @ExtendWith(SpringExtension::class)
 @DataJpaTest
@@ -31,7 +31,12 @@ class ExampleJpaTest {
     // When
     val examples = obtainExample.getAllExamples()
     // Then
-    assertThat(examples).isNotNull.extracting("description").contains("Twinkle twinkle little star")
+    StepVerifier.create(examples)
+        .expectNextMatches {
+          assertThat(it.description).isEqualTo("Twinkle twinkle little star")
+          true
+        }
+        .verifyComplete()
   }
 
   @Test
@@ -39,7 +44,8 @@ class ExampleJpaTest {
     // When
     val examples = obtainExample.getAllExamples()
     // Then
-    assertThat(examples).isNotNull.isEmpty()
+    StepVerifier.create(examples)
+        .verifyComplete()
   }
 
   @Sql(scripts = ["/sql/data.sql"])
@@ -49,7 +55,12 @@ class ExampleJpaTest {
     // When
     val example = obtainExample.getExampleByCode(1L)
     // Then
-    assertThat(example).isNotNull.get().isEqualTo(Example(1L, "Twinkle twinkle little star"))
+    StepVerifier.create(example)
+        .expectNextMatches {
+          assertThat(it.description).isEqualTo("Twinkle twinkle little star")
+          true
+        }
+        .verifyComplete()
   }
 
   @Sql(scripts = ["/sql/data.sql"])
@@ -59,6 +70,7 @@ class ExampleJpaTest {
     // When
     val example = obtainExample.getExampleByCode(-1000L)
     // Then
-    assertThat(example).isEmpty
+    StepVerifier.create(example)
+        .verifyComplete()
   }
 }
