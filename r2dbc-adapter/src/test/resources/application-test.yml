@@ -1,8 +1,17 @@
 spring:
   r2dbc:
-    url: r2dbc:h2:mem:///test?options=DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: r2dbc:h2:file:///./target/db/tmp/test-database?options=DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;
     name: sa
     password:
+  liquibase:
+    ur: jdbc:h2:file:./target/db/tmp/test-database?options=DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;
+    enabled: true
+    liquibase-schema: LIQUIBASE
+    default-schema: EXAMPLE
+    user: sa
+  sql:
+    init:
+      mode: always
 logging:
   level:
     org.springframework.data.r2dbc: DEBUG
