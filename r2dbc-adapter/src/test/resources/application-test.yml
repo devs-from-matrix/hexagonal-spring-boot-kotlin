@@ -1,17 +1,13 @@
 spring:
   r2dbc:
-    url: r2dbc:h2:file:///./target/db/tmp/test-database?options=DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;
-    name: sa
-    password:
+    url: 'r2dbc:h2:mem:///h2database'
+    username: 'h2user'
+    password: 'h2password'
+    properties:
+      Mode: PostgreSQL
+      MULTI_THREADED: TRUE
+      DB_CLOSE_ON_EXIT: FALSE
   liquibase:
-    ur: jdbc:h2:file:./target/db/tmp/test-database?options=DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;
-    enabled: true
+    change-log: classpath*:/db/changelog/db.changelog-master.yaml
     liquibase-schema: LIQUIBASE
     default-schema: EXAMPLE
-    user: sa
-  sql:
-    init:
-      mode: always
-logging:
-  level:
-    org.springframework.data.r2dbc: DEBUG

@@ -9,10 +9,32 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>r2dbc-adapter</artifactId>
+  <properties>
+    <liquibase-r2dbc-spring-boot-starter.version>2.1.4</liquibase-r2dbc-spring-boot-starter.version>
+  </properties>
   <dependencies>
+    <!-- Domain -->
+    <dependency>
+      <groupId>packagename</groupId>
+      <artifactId>domain-api</artifactId>
+    </dependency>
+    <!-- Libraries & Frameworks -->
+    <!-- R2DBC -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-r2dbc</artifactId>
+    </dependency>
+    <!-- Liquibase + R2DBC -->
+    <dependency>
+      <groupId>io.github.daggerok</groupId>
+      <artifactId>liquibase-r2dbc-spring-boot-starter</artifactId>
+      <version>${liquibase-r2dbc-spring-boot-starter.version}</version>
+    </dependency>
+    <!-- Liquibase + R2DBC: Runtime -->
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>io.r2dbc</groupId>
@@ -20,22 +42,13 @@
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.liquibase</groupId>
-      <artifactId>liquibase-core</artifactId>
-    </dependency>
-    <dependency>
       <groupId>net.lbruun.springboot</groupId>
       <artifactId>preliquibase-spring-boot-starter</artifactId>
       <version>${pre-liquibase.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-jdbc</artifactId>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-reflect</artifactId>
     </dependency>
     <!-- Test -->
     <dependency>
@@ -55,7 +68,7 @@
           </compilerPlugins>
         </configuration>
       </plugin>
-      <!--<plugin>
+      <plugin>
         <groupId>com.societegenerale.commons</groupId>
         <artifactId>arch-unit-maven-plugin</artifactId>
         <configuration>
@@ -76,7 +89,7 @@
             </preConfiguredRules>
           </rules>
         </configuration>
-      </plugin>-->
+      </plugin>
     </plugins>
   </build>
 </project>
