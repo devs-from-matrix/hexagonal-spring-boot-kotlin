@@ -9,6 +9,7 @@ databaseChangeLog:
               - column:
                   name: TECH_ID
                   type: BIGINT
+                  autoIncrement: true
                   constraints:
                     primaryKey: true
                     nullable: false
@@ -22,13 +23,7 @@ databaseChangeLog:
                   type: VARCHAR(255)
                   constraints:
                     nullable: false
-          createSequence:
-            sequenceName: SEQ_T_EXAMPLE
-            startValue: 1
-            incrementBy: 1
       rollback:
-        - dropSequence:
-            sequenceName: SEQ_T_EXAMPLE
         - dropTable:
             tableName: T_EXAMPLE
 
