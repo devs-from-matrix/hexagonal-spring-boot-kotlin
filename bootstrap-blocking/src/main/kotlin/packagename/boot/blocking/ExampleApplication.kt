@@ -1,4 +1,4 @@
-package packagename.boot
+package packagename.boot.blocking
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
