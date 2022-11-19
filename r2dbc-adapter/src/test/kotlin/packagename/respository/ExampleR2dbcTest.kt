@@ -1,6 +1,5 @@
 package packagename.respository
 
-import net.lbruun.springboot.preliquibase.PreLiquibaseAutoConfiguration
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation
 import org.junit.jupiter.api.Order
@@ -8,7 +7,6 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestMethodOrder
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.autoconfigure.ImportAutoConfiguration
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.r2dbc.core.DatabaseClient
 import org.springframework.test.context.ActiveProfiles
@@ -19,7 +17,6 @@ import java.util.function.Consumer
 
 
 @SpringBootTest
-@ImportAutoConfiguration(PreLiquibaseAutoConfiguration::class)
 @ExtendWith(SpringExtension::class)
 @TestMethodOrder(OrderAnnotation::class)
 @ActiveProfiles("test")
