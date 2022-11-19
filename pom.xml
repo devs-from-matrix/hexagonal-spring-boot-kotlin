@@ -37,9 +37,9 @@
     <module>domain-api</module>
     <module>rest-adapter</module>
     <module>jpa-adapter</module>
-    <module>acceptance-test</module>
-    <module>bootstrap</module>
+    <module>bootstrap-blocking</module>
     <module>r2dbc-adapter</module>
+    <module>bootstrap-nonblocking</module>
   </modules>
   <dependencyManagement>
     <dependencies>
@@ -98,7 +98,17 @@
       </dependency>
       <dependency>
         <groupId>packagename</groupId>
-        <artifactId>bootstrap</artifactId>
+        <artifactId>r2dbc-adapter</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>packagename</groupId>
+        <artifactId>bootstrap-blocking</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>packagename</groupId>
+        <artifactId>bootstrap-nonblocking</artifactId>
         <version>${project.version}</version>
       </dependency>
       <!-- Frameworks & Libraries -->
