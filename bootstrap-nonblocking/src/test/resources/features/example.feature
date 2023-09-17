@@ -16,7 +16,7 @@ Feature: User would like to get examples
 
   Scenario: User should be able to get examples by code
     When user requests for examples by code "1"
-    Then the user gets the following examples
+    Then the user gets the following example
       | code | description                 |
       | 1    | Twinkle twinkle little star |
 

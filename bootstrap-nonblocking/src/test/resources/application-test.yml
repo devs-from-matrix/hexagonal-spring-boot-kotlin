@@ -8,6 +8,6 @@ spring:
       MULTI_THREADED: TRUE
       DB_CLOSE_ON_EXIT: FALSE
   liquibase:
-    change-log: classpath*:/db/changelog/db.changelog-master.yaml
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
     liquibase-schema: LIQUIBASE
     default-schema: EXAMPLE
