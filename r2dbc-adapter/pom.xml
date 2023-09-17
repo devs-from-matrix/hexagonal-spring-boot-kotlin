@@ -10,7 +10,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>r2dbc-adapter</artifactId>
   <properties>
-    <liquibase-r2dbc-spring-boot-starter.version>2.1.4</liquibase-r2dbc-spring-boot-starter.version>
+    <liquibase-r2dbc-spring-boot-starter.version>2.1.10</liquibase-r2dbc-spring-boot-starter.version>
   </properties>
   <dependencies>
     <!-- Domain -->
