@@ -9,27 +9,25 @@
   <version>1.0-SNAPSHOT</version>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.version>11</java.version>
-    <kotlin.version>1.7.20</kotlin.version>
+    <java.version>17</java.version>
+    <kotlin.version>1.9.10</kotlin.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <junit-jupiter.version>5.9.1</junit-jupiter.version>
-    <spring-boot.version>2.7.5</spring-boot.version>
-    <cucumber.version>7.9.0</cucumber.version>
-    <springdoc.version>1.6.12</springdoc.version>
-    <pre-liquibase.version>1.2.2</pre-liquibase.version>
-    <classgraph.version>4.8.149</classgraph.version>
+    <junit-jupiter.version>5.10.0</junit-jupiter.version>
+    <spring-boot.version>3.1.4</spring-boot.version>
+    <cucumber.version>7.14.0</cucumber.version>
+    <pre-liquibase.version>1.4.0</pre-liquibase.version>
     <!-- plugins -->
     <cukedoctor-maven-plugin.version>3.9.0</cukedoctor-maven-plugin.version>
-    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-    <maven-enforcer-plugin>3.1.0</maven-enforcer-plugin>
+    <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+    <maven-enforcer-plugin>3.4.1</maven-enforcer-plugin>
     <arch-unit-maven-plugin.version>3.0.0</arch-unit-maven-plugin.version>
-    <jackson-module-kotlin.version>2.13.4</jackson-module-kotlin.version>
-    <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
-    <jib-maven.plugin.version>3.3.1</jib-maven.plugin.version>
-    <git-code-format-maven-plugin.version>3.5</git-code-format-maven-plugin.version>
+    <jackson-module-kotlin.version>2.15.2</jackson-module-kotlin.version>
+    <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
+    <jib-maven.plugin.version>3.3.2</jib-maven.plugin.version>
+    <git-code-format-maven-plugin.version>4.2</git-code-format-maven-plugin.version>
     <githook-maven-plugin.version>1.0.5</githook-maven-plugin.version>
-    <pitest-maven-plugin.version>1.9.9</pitest-maven-plugin.version>
+    <pitest-maven-plugin.version>1.15.0</pitest-maven-plugin.version>
     <pitest-junit5-plugin.version>1.1.0</pitest-junit5-plugin.version>
   </properties>
   <modules>
@@ -48,12 +46,6 @@
         <groupId>org.jetbrains.kotlin</groupId>
         <artifactId>kotlin-stdlib-jdk8</artifactId>
         <version>${kotlin.version}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-          </exclusion>
-        </exclusions>
       </dependency>
       <dependency>
         <groupId>org.jetbrains.kotlin</groupId>
@@ -64,16 +56,6 @@
         <groupId>com.fasterxml.jackson.module</groupId>
         <artifactId>jackson-module-kotlin</artifactId>
         <version>${jackson-module-kotlin.version}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-      <dependency>
-        <groupId>org.jetbrains</groupId>
-        <artifactId>annotations</artifactId>
       </dependency>
       <!-- Project module dependency -->
       <dependency>
@@ -125,17 +107,6 @@
         <version>${spring-boot.version}</version>
         <type>pom</type>
         <scope>import</scope>
-      </dependency>
-      <!-- springdoc ui -->
-      <dependency>
-        <groupId>org.springdoc</groupId>
-        <artifactId>springdoc-openapi-webflux-ui</artifactId>
-        <version>${springdoc.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.github.classgraph</groupId>
-        <artifactId>classgraph</artifactId>
-        <version>${classgraph.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

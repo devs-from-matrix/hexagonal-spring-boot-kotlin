@@ -2,7 +2,7 @@ package packagename.repository.entity
 
 import org.hibernate.envers.Audited
 import packagename.domain.model.Example
-import javax.persistence.*
+import jakarta.persistence.*
 
 @Table(name = "T_EXAMPLE")
 @Entity
