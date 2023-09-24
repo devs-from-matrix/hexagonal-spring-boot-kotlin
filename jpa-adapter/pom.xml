@@ -19,12 +19,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
-      <exclusions>
+      <!--<exclusions>
         <exclusion>
           <groupId>org.springframework.roo</groupId>
           <artifactId>org.springframework.roo.annotations</artifactId>
         </exclusion>
-      </exclusions>
+      </exclusions>-->
     </dependency>
     <dependency>
       <groupId>org.liquibase</groupId>
@@ -33,7 +33,7 @@
     <dependency>
       <groupId>org.springframework.data</groupId>
       <artifactId>spring-data-envers</artifactId>
-      <exclusions>
+      <!--<exclusions>
         <exclusion>
           <groupId>org.springframework.roo</groupId>
           <artifactId>org.springframework.roo.annotations</artifactId>
@@ -50,12 +50,12 @@
           <groupId>io.github.classgraph</groupId>
           <artifactId>classgraph</artifactId>
         </exclusion>
-      </exclusions>
+      </exclusions>-->
     </dependency>
-    <dependency>
+    <!--<dependency>
       <groupId>io.github.classgraph</groupId>
       <artifactId>classgraph</artifactId>
-    </dependency>
+    </dependency>-->
     <dependency>
       <groupId>net.lbruun.springboot</groupId>
       <artifactId>preliquibase-spring-boot-starter</artifactId>
@@ -64,12 +64,12 @@
     <dependency>
       <groupId>com.fasterxml.jackson.module</groupId>
       <artifactId>jackson-module-kotlin</artifactId>
-      <exclusions>
+      <!--<exclusions>
         <exclusion>
           <groupId>org.jetbrains</groupId>
           <artifactId>annotations</artifactId>
         </exclusion>
-      </exclusions>
+      </exclusions>-->
     </dependency>
     <!-- Test -->
     <dependency>

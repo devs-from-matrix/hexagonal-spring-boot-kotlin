@@ -1,6 +1,6 @@
 package packagename.repository.entity
 
-import javax.persistence.*
+import jakarta.persistence.*
 
 @Table(name = "REVISION_INFO", schema = "EXAMPLE_AUDIT")
 @Entity
