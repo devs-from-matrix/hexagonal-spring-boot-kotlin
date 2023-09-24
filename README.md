@@ -13,7 +13,7 @@ Use it with caution as these will be used by the app-generator to replace them w
 ## Pre-requisite 
 
 - maven
-- open jdk 11
+- open jdk 17
 
 ## How to build ?
 
