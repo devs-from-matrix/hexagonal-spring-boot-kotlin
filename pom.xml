@@ -17,6 +17,8 @@
     <spring-boot.version>3.1.5</spring-boot.version>
     <cucumber.version>7.14.0</cucumber.version>
     <pre-liquibase.version>1.4.0</pre-liquibase.version>
+    <snakeyaml.version>2.0</snakeyaml.version>
+    <h2.version>2.2.224</h2.version>
     <!-- plugins -->
     <cukedoctor-maven-plugin.version>3.9.0</cukedoctor-maven-plugin.version>
     <maven-surefire-plugin.version>3.2.2</maven-surefire-plugin.version>
@@ -41,6 +43,23 @@
   </modules>
   <dependencyManagement>
     <dependencies>
+      <!-- Following exclusions are made since there were security vulnerabilities -->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-webflux</artifactId>
+        <version>${spring-boot.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.yaml</groupId>
+        <artifactId>snakeyaml</artifactId>
+        <version>${snakeyaml.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <scope>test</scope>
+        <version>${h2.version}</version>
+      </dependency>
       <!--Kotlin dependency-->
       <dependency>
         <groupId>org.jetbrains.kotlin</groupId>
