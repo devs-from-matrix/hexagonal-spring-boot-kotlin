@@ -4,8 +4,6 @@ spring:
       enabled: false
   r2dbc:
     url: 'r2dbc:h2:mem:///h2database'
-    username: 'h2user'
-    password: 'h2password'
     properties:
       Mode: PostgreSQL
       MULTI_THREADED: TRUE
