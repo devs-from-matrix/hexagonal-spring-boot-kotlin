@@ -29,6 +29,17 @@
       <groupId>io.github.daggerok</groupId>
       <artifactId>liquibase-r2dbc-spring-boot-starter</artifactId>
       <version>${liquibase-r2dbc-spring-boot-starter.version}</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-text</artifactId>
+          <groupId>org.apache.commons</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <artifactId>commons-text</artifactId>
+      <groupId>org.apache.commons</groupId>
+      <version>${apache.commons.version}</version>
     </dependency>
     <!-- Liquibase + R2DBC: Runtime -->
     <dependency>
