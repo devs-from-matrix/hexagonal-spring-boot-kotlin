@@ -17,7 +17,7 @@
     <spring-boot.version>3.4.1</spring-boot.version>
     <cucumber.version>7.20.1</cucumber.version>
     <pre-liquibase.version>1.6.0</pre-liquibase.version>
-    <snakeyaml.version>2.3</snakeyaml.version>
+    <snakeyaml.version>2.4</snakeyaml.version>
     <h2.version>2.3.232</h2.version>
     <apache.commons.version>1.13.0</apache.commons.version>
     <!-- plugins -->
