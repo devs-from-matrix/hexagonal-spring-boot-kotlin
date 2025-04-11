@@ -15,18 +15,18 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <junit-jupiter.version>5.12.1</junit-jupiter.version>
     <spring-boot.version>3.4.4</spring-boot.version>
-    <cucumber.version>7.21.1</cucumber.version>
+    <cucumber.version>7.22.0</cucumber.version>
     <pre-liquibase.version>1.6.0</pre-liquibase.version>
     <snakeyaml.version>2.4</snakeyaml.version>
     <h2.version>2.3.232</h2.version>
-    <apache.commons.version>1.13.0</apache.commons.version>
+    <apache.commons.version>1.13.1</apache.commons.version>
     <!-- plugins -->
     <cukedoctor-maven-plugin.version>3.9.0</cukedoctor-maven-plugin.version>
-    <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
+    <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
     <maven-enforcer-plugin>3.5.0</maven-enforcer-plugin>
     <arch-unit-maven-plugin.version>4.0.2</arch-unit-maven-plugin.version>
     <jackson-module-kotlin.version>2.18.3</jackson-module-kotlin.version>
-    <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
+    <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
     <jib-maven.plugin.version>3.4.5</jib-maven.plugin.version>
     <git-code-format-maven-plugin.version>5.3</git-code-format-maven-plugin.version>
     <githook-maven-plugin.version>1.0.5</githook-maven-plugin.version>
