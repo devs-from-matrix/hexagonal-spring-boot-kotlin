@@ -5,18 +5,20 @@ import org.junit.jupiter.api.Test
 import org.mockito.Mockito
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest
+import org.springframework.test.context.bean.override.mockito.MockitoBean
 import org.springframework.test.web.reactive.server.WebTestClient
 import packagename.domain.exception.ExampleNotFoundException
 import packagename.domain.model.Example
-import packagename.rest.representation.ExampleInfo
 import packagename.domain.port.RequestExample
 import packagename.rest.exception.ExampleExceptionResponse
+import packagename.rest.representation.ExampleInfo
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 @WebFluxTest(ExampleResource::class)
 class ExampleResourceTest {
-
+  @MockitoBean
+  private lateinit var requestExample: RequestExample
   companion object {
 
     private const val API_URI = "/api/v1/examples"
@@ -24,9 +26,6 @@ class ExampleResourceTest {
 
   @Autowired
   private lateinit var webTestClient: WebTestClient
-
-  @Autowired
-  private lateinit var requestExample: RequestExample
 
   @Test
   fun `should start the rest adapter application`() {
