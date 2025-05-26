@@ -16,7 +16,7 @@
     <junit-jupiter.version>5.12.2</junit-jupiter.version>
     <spring-boot.version>3.4.5</spring-boot.version>
     <cucumber.version>7.22.2</cucumber.version>
-    <pre-liquibase.version>1.6.0</pre-liquibase.version>
+    <pre-liquibase.version>1.6.1</pre-liquibase.version>
     <snakeyaml.version>2.4</snakeyaml.version>
     <h2.version>2.3.232</h2.version>
     <apache.commons.version>1.13.1</apache.commons.version>
